@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Indicadores ambientais da Indústria Conectada">
+    <title>Sustentabilidade | Indústria Conectada</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="marca">
+            <span class="marca-icone" aria-hidden="true">IC</span>
+
+            <div>
+                <h1>Indústria Conectada</h1>
+                <p>Monitoramento e gestão industrial</p>
+            </div>
+        </div>
+
+        <button class="usuario" type="button" aria-label="Perfil do administrador">
+            <span>Administrador</span>
+        </button>
+    </header>
+
+    <div class="layout">
+        <nav class="navegacao-topo" aria-label="Navegação principal">
+            <ul>
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="./maquinas.html">Máquinas</a></li>
+                <li><a href="./producao.html">Produção</a></li>
+                <li>
+                    <a class="ativo" href="./sustentabilidade.html" aria-current="page">
+                        Sustentabilidade
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="conteudo-principal" class="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <p class="caminho">Início / Sustentabilidade</p>
+                    <h2>Sustentabilidade</h2>
+                    <p>Acompanhe o consumo de recursos e os resultados ambientais.</p>
+                </div>
+
+                <button class="botao botao-primario" type="button">
+                    Novo registro
+                </button>
+            </div>
+
+            <section class="grade-sustentabilidade" aria-label="Indicadores de sustentabilidade">
+                <article class="cartao-indicador cartao-ambiental">
+                    <span class="indicador-icone verde" aria-hidden="true">↓</span>
+                    <div>
+                        <p>Baixas emissões</p>
+                        <strong>18%</strong>
+                        <small>redução no mês</small>
+                    </div>
+                </article>
+
+                <article class="cartao-indicador cartao-ambiental">
+                    <span class="indicador-icone amarelo" aria-hidden="true">E</span>
+                    <div>
+                        <p>Energia consumida</p>
+                        <strong>620</strong>
+                        <small>kWh no mês</small>
+                    </div>
+                </article>
+
+                <article class="cartao-indicador cartao-ambiental">
+                    <span class="indicador-icone azul" aria-hidden="true">A</span>
+                    <div>
+                        <p>Água consumida</p>
+                        <strong>42</strong>
+                        <small>m³ no mês</small>
+                    </div>
+                </article>
+
+                <article class="cartao-indicador cartao-ambiental">
+                    <span class="indicador-icone vermelho" aria-hidden="true">R</span>
+                    <div>
+                        <p>Resíduos gerados</p>
+                        <strong>250</strong>
+                        <small>kg no mês</small>
+                    </div>
+                </article>
+
+                <article class="cartao-indicador cartao-ambiental">
+                    <span class="indicador-icone verde" aria-hidden="true">♻</span>
+                    <div>
+                        <p>Total reciclado</p>
+                        <strong>180</strong>
+                        <small>kg no mês</small>
+                    </div>
+                </article>
+
+                <article class="cartao-indicador cartao-ambiental">
+                    <span class="indicador-icone verde" aria-hidden="true">%</span>
+                    <div>
+                        <p>Taxa de reciclagem</p>
+                        <strong>72%</strong>
+                        <small>180 kg de 250 kg</small>
+                    </div>
+                </article>
+            </section>
+
+            <section class="grade-dashboard" aria-label="Análise ambiental">
+                <article class="painel painel-destaque-verde">
+                    <div class="painel-cabecalho">
+                        <div>
+                            <h3>Desempenho ambiental</h3>
+                            <p>Percentual de resíduos reciclados no período</p>
+                        </div>
+                    </div>
+
+                    <div class="taxa-circular" role="img" aria-label="Taxa de reciclagem de 72 por cento">
+                        <div>
+                            <strong>72%</strong>
+                            <span>reciclado</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="painel">
+                    <div class="painel-cabecalho">
+                        <div>
+                            <h3>Metas do mês</h3>
+                            <p>Progresso dos objetivos ambientais</p>
+                        </div>
+                    </div>
+
+                    <div class="meta-ambiental">
+                        <div><span>Reduzir energia</span><strong>82%</strong></div>
+                        <div class="barra-progresso"><div style="width: 82%;"></div></div>
+                    </div>
+
+                    <div class="meta-ambiental">
+                        <div><span>Reduzir água</span><strong>65%</strong></div>
+                        <div class="barra-progresso"><div style="width: 65%;"></div></div>
+                    </div>
+
+                    <div class="meta-ambiental">
+                        <div><span>Reciclar resíduos</span><strong>72%</strong></div>
+                        <div class="barra-progresso"><div style="width: 72%;"></div></div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="painel">
+                <div class="painel-cabecalho">
+                    <div>
+                        <h3>Registros ambientais</h3>
+                        <p>Histórico recente de consumo e descarte</p>
+                    </div>
+                </div>
+
+                <div class="tabela-responsiva">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Período</th>
+                                <th scope="col">Energia</th>
+                                <th scope="col">Água</th>
+                                <th scope="col">Resíduos</th>
+                                <th scope="col">Reciclado</th>
+                                <th scope="col">Taxa</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Julho/2026</td>
+                                <td>620 kWh</td>
+                                <td>42 m³</td>
+                                <td>250 kg</td>
+                                <td>180 kg</td>
+                                <td><span class="status status-operacao">72%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Junho/2026</td>
+                                <td>680 kWh</td>
+                                <td>46 m³</td>
+                                <td>270 kg</td>
+                                <td>176 kg</td>
+                                <td><span class="status status-manutencao">65%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Maio/2026</td>
+                                <td>710 kWh</td>
+                                <td>51 m³</td>
+                                <td>290 kg</td>
+                                <td>174 kg</td>
+                                <td><span class="status status-manutencao">60%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

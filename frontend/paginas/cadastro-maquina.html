@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastrar máquina | Indústria Conectada</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="marca">
+            <span class="marca-icone" aria-hidden="true">IC</span>
+
+            <div>
+                <h1>Indústria Conectada</h1>
+                <p>Monitoramento e gestão industrial</p>
+            </div>
+        </div>
+
+        <button class="usuario" type="button" aria-label="Perfil do administrador">
+            <span>Administrador</span>
+        </button>
+    </header>
+
+    <div class="layout">
+        <nav class="navegacao-topo" aria-label="Navegação principal">
+            <ul>
+                <li>
+                    <a href="../index.html">Dashboard</a>
+                </li>
+
+                <li>
+                    <a class="ativo" href="./maquinas.html">
+                        Máquinas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./producao.html">Produção</a>
+                </li>
+
+                <li>
+                    <a href="./sustentabilidade.html">Sustentabilidade</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="conteudo-principal" class="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <p class="caminho">
+                        Início / Máquinas / Cadastrar
+                    </p>
+
+                    <h2>Cadastrar máquina</h2>
+
+                    <p>
+                        Preencha os dados para adicionar um equipamento.
+                    </p>
+                </div>
+            </div>
+
+            <section class="painel formulario-painel">
+                <form>
+                    <p class="aviso-campos">
+                        Campos marcados com * são obrigatórios.
+                    </p>
+
+                    <div class="grade-formulario">
+                        <div class="campo campo-largo">
+                            <label for="nome">
+                                Nome da máquina *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Ex.: Torno CNC 01"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="setor">Setor *</label>
+
+                            <input
+                                type="text"
+                                id="setor"
+                                name="setor"
+                                placeholder="Ex.: Usinagem"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="tipo">Tipo *</label>
+
+                            <input
+                                type="text"
+                                id="tipo"
+                                name="tipo"
+                                placeholder="Ex.: Torno"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="status">Status *</label>
+
+                            <select id="status" name="status" required>
+                                <option value="">Selecione</option>
+                                <option>Em operação</option>
+                                <option>Em manutenção</option>
+                                <option>Parada</option>
+                                <option>Desativada</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="consumo">
+                                Consumo médio de energia (kWh) *
+                            </label>
+
+                            <input
+                                type="number"
+                                id="consumo"
+                                name="consumo"
+                                min="0"
+                                step="0.01"
+                                placeholder="Ex.: 45.50"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="temperatura">
+                                Temperatura atual (°C) *
+                            </label>
+
+                            <input
+                                type="number"
+                                id="temperatura"
+                                name="temperatura"
+                                step="0.1"
+                                placeholder="Ex.: 42"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="acoes-formulario">
+                        <a class="botao botao-cancelar" href="./maquinas.html">
+                            Cancelar
+                        </a>
+
+                        <button class="botao botao-primario" type="button">
+                            Salvar máquina
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

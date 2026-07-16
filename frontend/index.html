@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Painel de monitoramento do sistema Indústria Conectada"
+    >
+
+    <title>Dashboard | Indústria Conectada</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="marca">
+            <span class="marca-icone" aria-hidden="true">IC</span>
+
+            <div>
+                <h1>Indústria Conectada</h1>
+                <p>Monitoramento e gestão industrial</p>
+            </div>
+        </div>
+
+        <button class="usuario" type="button" aria-label="Perfil do administrador">
+            <span>Administrador</span>
+        </button>
+    </header>
+
+    <div class="layout">
+        <nav class="navegacao-topo" aria-label="Navegação principal">
+            <ul>
+                <li>
+                    <a class="ativo" href="./index.html" aria-current="page">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./paginas/maquinas.html">
+                        Máquinas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./paginas/producao.html">
+                        Produção
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./paginas/sustentabilidade.html">
+                        Sustentabilidade
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="conteudo-principal" class="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <p class="caminho">Início / Dashboard</p>
+                    <h2>Dashboard</h2>
+                    <p>Visão geral dos indicadores da indústria.</p>
+                </div>
+
+                <a class="botao botao-primario" href="./paginas/cadastro-maquina.html">
+                    Cadastrar máquina
+                </a>
+            </div>
+
+            <section aria-labelledby="titulo-indicadores">
+                <h3 id="titulo-indicadores" class="titulo-secao">
+                    Indicadores principais
+                </h3>
+
+                <div class="grade-indicadores">
+                    <article class="cartao-indicador">
+                        <span class="indicador-icone azul" aria-hidden="true">M</span>
+
+                        <div>
+                            <p>Máquinas cadastradas</p>
+                            <strong>10</strong>
+                        </div>
+                    </article>
+
+                    <article class="cartao-indicador">
+                        <span class="indicador-icone verde" aria-hidden="true">✓</span>
+
+                        <div>
+                            <p>Em operação</p>
+                            <strong>7</strong>
+                        </div>
+                    </article>
+
+                    <article class="cartao-indicador">
+                        <span class="indicador-icone amarelo" aria-hidden="true">!</span>
+
+                        <div>
+                            <p>Em manutenção</p>
+                            <strong>2</strong>
+                        </div>
+                    </article>
+
+                    <article class="cartao-indicador">
+                        <span class="indicador-icone vermelho" aria-hidden="true">■</span>
+
+                        <div>
+                            <p>Máquinas paradas</p>
+                            <strong>1</strong>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="grade-dashboard" aria-label="Resumo da produção">
+                <article class="painel">
+                    <div class="painel-cabecalho">
+                        <div>
+                            <h3>Produção mensal</h3>
+                            <p>Quantidade produzida nos últimos meses</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="grafico-barras"
+                        role="img"
+                        aria-label="Gráfico de produção: janeiro 65%, fevereiro 80%, março 72%, abril 90%"
+                    >
+                        <div class="barra-item">
+                            <div class="barra" style="height: 65%;"></div>
+                            <span>Jan</span>
+                        </div>
+
+                        <div class="barra-item">
+                            <div class="barra" style="height: 80%;"></div>
+                            <span>Fev</span>
+                        </div>
+
+                        <div class="barra-item">
+                            <div class="barra" style="height: 72%;"></div>
+                            <span>Mar</span>
+                        </div>
+
+                        <div class="barra-item">
+                            <div class="barra" style="height: 90%;"></div>
+                            <span>Abr</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="painel">
+                    <div class="painel-cabecalho">
+                        <div>
+                            <h3>Resumo de produtividade</h3>
+                            <p>Desempenho atual da indústria</p>
+                        </div>
+                    </div>
+
+                    <div class="produtividade">
+                        <strong>87%</strong>
+                        <span>Produtividade média</span>
+
+                        <div
+                            class="barra-progresso"
+                            role="progressbar"
+                            aria-label="Produtividade média"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="87"
+                        >
+                            <div style="width: 87%;"></div>
+                        </div>
+                    </div>
+
+                    <ul class="lista-resumo">
+                        <li>
+                            <span>Produção total</span>
+                            <strong>8.500 unidades</strong>
+                        </li>
+
+                        <li>
+                            <span>Meta mensal</span>
+                            <strong>10.000 unidades</strong>
+                        </li>
+
+                        <li>
+                            <span>Consumo de energia</span>
+                            <strong>620 kWh</strong>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="painel">
+                <div class="painel-cabecalho">
+                    <div>
+                        <h3>Situação das máquinas</h3>
+                        <p>Resumo dos equipamentos monitorados</p>
+                    </div>
+
+                    <a href="./paginas/maquinas.html">
+                        Ver todas
+                    </a>
+                </div>
+
+                <div class="tabela-responsiva">
+                    <table>
+                        <caption class="somente-leitor">
+                            Situação atual das máquinas
+                        </caption>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Máquina</th>
+                                <th scope="col">Setor</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Temperatura</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Torno CNC 01</td>
+                                <td>Usinagem</td>
+                                <td>
+                                    <span class="status status-operacao">
+                                        Em operação
+                                    </span>
+                                </td>
+                                <td>42 °C</td>
+                            </tr>
+
+                            <tr>
+                                <td>Prensa Hidráulica</td>
+                                <td>Estamparia</td>
+                                <td>
+                                    <span class="status status-manutencao">
+                                        Em manutenção
+                                    </span>
+                                </td>
+                                <td>28 °C</td>
+                            </tr>
+
+                            <tr>
+                                <td>Esteira 03</td>
+                                <td>Montagem</td>
+                                <td>
+                                    <span class="status status-parada">
+                                        Parada
+                                    </span>
+                                </td>
+                                <td>24 °C</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

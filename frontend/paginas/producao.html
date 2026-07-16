@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produção | Indústria Conectada</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="marca">
+            <span class="marca-icone" aria-hidden="true">IC</span>
+
+            <div>
+                <h1>Indústria Conectada</h1>
+                <p>Monitoramento e gestão industrial</p>
+            </div>
+        </div>
+
+        <button class="usuario" type="button" aria-label="Perfil do administrador">
+            <span>Administrador</span>
+        </button>
+    </header>
+
+    <div class="layout">
+        <nav class="navegacao-topo" aria-label="Navegação principal">
+            <ul>
+                <li>
+                    <a href="../index.html">Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="./maquinas.html">Máquinas</a>
+                </li>
+
+                <li>
+                    <a class="ativo" href="./producao.html" aria-current="page">
+                        Produção
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./sustentabilidade.html">Sustentabilidade</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="conteudo-principal" class="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <p class="caminho">Início / Produção</p>
+                    <h2>Produção</h2>
+                    <p>Acompanhe os registros e metas de produção.</p>
+                </div>
+
+                <button class="botao botao-primario" type="button">
+                    Registrar produção
+                </button>
+            </div>
+
+            <section class="grade-indicadores" aria-label="Indicadores de produção">
+                <article class="cartao-indicador">
+                    <span class="indicador-icone azul" aria-hidden="true">P</span>
+
+                    <div>
+                        <p>Total produzido</p>
+                        <strong>8.500</strong>
+                    </div>
+                </article>
+
+                <article class="cartao-indicador">
+                    <span class="indicador-icone verde" aria-hidden="true">%</span>
+
+                    <div>
+                        <p>Produtividade média</p>
+                        <strong>87%</strong>
+                    </div>
+                </article>
+
+                <article class="cartao-indicador">
+                    <span class="indicador-icone amarelo" aria-hidden="true">M</span>
+
+                    <div>
+                        <p>Meta mensal</p>
+                        <strong>10.000</strong>
+                    </div>
+                </article>
+            </section>
+
+            <section class="painel">
+                <div class="painel-cabecalho">
+                    <div>
+                        <h3>Registros de produção</h3>
+                        <p>Últimos registros cadastrados</p>
+                    </div>
+                </div>
+
+                <div class="tabela-responsiva">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Máquina</th>
+                                <th scope="col">Produzido</th>
+                                <th scope="col">Meta</th>
+                                <th scope="col">Produtividade</th>
+                                <th scope="col">Data</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Engrenagem A</td>
+                                <td>Torno CNC 01</td>
+                                <td>850</td>
+                                <td>1.000</td>
+                                <td>
+                                    <span class="status status-operacao">85%</span>
+                                </td>
+                                <td>15/07/2026</td>
+                            </tr>
+
+                            <tr>
+                                <td>Chapa metálica</td>
+                                <td>Prensa Hidráulica</td>
+                                <td>920</td>
+                                <td>1.000</td>
+                                <td>
+                                    <span class="status status-operacao">92%</span>
+                                </td>
+                                <td>14/07/2026</td>
+                            </tr>
+
+                            <tr>
+                                <td>Suporte B</td>
+                                <td>Esteira 03</td>
+                                <td>720</td>
+                                <td>1.000</td>
+                                <td>
+                                    <span class="status status-manutencao">72%</span>
+                                </td>
+                                <td>13/07/2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

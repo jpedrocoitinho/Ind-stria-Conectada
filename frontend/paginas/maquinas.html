@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Máquinas | Indústria Conectada</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="marca">
+            <span class="marca-icone" aria-hidden="true">IC</span>
+
+            <div>
+                <h1>Indústria Conectada</h1>
+                <p>Monitoramento e gestão industrial</p>
+            </div>
+        </div>
+
+        <button class="usuario" type="button" aria-label="Perfil do administrador">
+            <span>Administrador</span>
+        </button>
+    </header>
+
+    <div class="layout">
+        <nav class="navegacao-topo" aria-label="Navegação principal">
+            <ul>
+                <li>
+                    <a href="../index.html">Dashboard</a>
+                </li>
+
+                <li>
+                    <a class="ativo" href="./maquinas.html" aria-current="page">
+                        Máquinas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./producao.html">Produção</a>
+                </li>
+
+                <li>
+                    <a href="./sustentabilidade.html">Sustentabilidade</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="conteudo-principal" class="conteudo">
+            <div class="titulo-pagina">
+                <div>
+                    <p class="caminho">Início / Máquinas</p>
+                    <h2>Máquinas</h2>
+                    <p>Consulte e gerencie os equipamentos cadastrados.</p>
+                </div>
+
+                <a class="botao botao-primario" href="./cadastro-maquina.html">
+                    Cadastrar máquina
+                </a>
+            </div>
+
+            <section class="painel" aria-labelledby="titulo-filtros">
+                <h3 id="titulo-filtros" class="titulo-secao">
+                    Pesquisar máquinas
+                </h3>
+
+                <form class="filtros">
+                    <div class="campo campo-pesquisa">
+                        <label for="pesquisa">Nome da máquina</label>
+                        <input
+                            type="search"
+                            id="pesquisa"
+                            name="pesquisa"
+                            placeholder="Ex.: Torno CNC"
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="status">Status</label>
+
+                        <select id="status" name="status">
+                            <option value="">Todos</option>
+                            <option>Em operação</option>
+                            <option>Em manutenção</option>
+                            <option>Parada</option>
+                            <option>Desativada</option>
+                        </select>
+                    </div>
+
+                    <button class="botao botao-secundario" type="button">
+                        Pesquisar
+                    </button>
+                </form>
+            </section>
+
+            <section class="painel" aria-labelledby="titulo-lista-maquinas">
+                <div class="painel-cabecalho">
+                    <div>
+                        <h3 id="titulo-lista-maquinas">Máquinas cadastradas</h3>
+                        <p>3 máquinas encontradas</p>
+                    </div>
+                </div>
+
+                <div class="tabela-responsiva">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Setor</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Consumo</th>
+                                <th scope="col">Temperatura</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Torno CNC 01</td>
+                                <td>Usinagem</td>
+                                <td>Torno</td>
+                                <td>
+                                    <span class="status status-operacao">
+                                        Em operação
+                                    </span>
+                                </td>
+                                <td>45 kWh</td>
+                                <td>42 °C</td>
+                                <td class="acoes">
+                                    <button class="botao-acao editar" type="button">
+                                        Editar
+                                    </button>
+
+                                    <button class="botao-acao excluir" type="button">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Prensa Hidráulica</td>
+                                <td>Estamparia</td>
+                                <td>Prensa</td>
+                                <td>
+                                    <span class="status status-manutencao">
+                                        Em manutenção
+                                    </span>
+                                </td>
+                                <td>70 kWh</td>
+                                <td>28 °C</td>
+                                <td class="acoes">
+                                    <button class="botao-acao editar" type="button">
+                                        Editar
+                                    </button>
+
+                                    <button class="botao-acao excluir" type="button">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Esteira 03</td>
+                                <td>Montagem</td>
+                                <td>Esteira</td>
+                                <td>
+                                    <span class="status status-parada">
+                                        Parada
+                                    </span>
+                                </td>
+                                <td>20 kWh</td>
+                                <td>24 °C</td>
+                                <td class="acoes">
+                                    <button class="botao-acao editar" type="button">
+                                        Editar
+                                    </button>
+
+                                    <button class="botao-acao excluir" type="button">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
