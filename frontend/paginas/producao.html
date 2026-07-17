@@ -6,18 +6,25 @@
 
     <title>Produção | Indústria Conectada</title>
 
+    <link rel="icon" type="image/png" href="../assets/imagens/logo.png">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <header class="cabecalho">
         <div class="marca">
-            <span class="marca-icone" aria-hidden="true">IC</span>
+            <span class="marca-icone">
+                <img src="../assets/imagens/logo.png" alt="Logotipo da Indústria Conectada">
+            </span>
 
             <div>
                 <h1>Indústria Conectada</h1>
                 <p>Monitoramento e gestão industrial</p>
             </div>
+        </div>
+
+        <div class="botao-3d-centro">
+            <button class="btn" type="button">Sistema online</button>
         </div>
 
         <button class="usuario" type="button" aria-label="Perfil do administrador">
@@ -56,9 +63,6 @@
                     <p>Acompanhe os registros e metas de produção.</p>
                 </div>
 
-                <button class="botao botao-primario" type="button">
-                    Registrar produção
-                </button>
             </div>
 
             <section class="grade-indicadores" aria-label="Indicadores de produção">
@@ -150,6 +154,39 @@
             </section>
         </main>
     </div>
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+            <section class="rodape-coluna rodape-menu">
+                <h2>Menu</h2>
+                <nav aria-label="Navegação do rodapé">
+                    <a href="../index.html">Dashboard</a>
+                    <a href="./maquinas.html">Máquinas</a>
+                    <a href="./producao.html">Produção</a>
+                    <a href="./sustentabilidade.html">Sustentabilidade</a>
+                </nav>
+            </section>
+
+            <section class="rodape-coluna">
+                <h2>Sociais</h2>
+                <nav aria-label="Redes sociais">
+                    <a href="#">GitHub</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </nav>
+            </section>
+
+            <section class="rodape-coluna">
+                <h2>Recursos</h2>
+                <nav>
+                    <a href="../../README.md">Documentação</a>
+                    <a href="#">Projeto Integrador</a>
+                </nav>
+                <button class="rodape-botao" type="button">Enviar mensagem</button>
+            </section>
+        </div>
+
+        <div class="rodape-marca" aria-hidden="true">INDÚSTRIA</div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="../js/script.js"></script>
 </body>

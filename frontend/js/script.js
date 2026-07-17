@@ -1,4 +1,131 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const CHAVE_MAQUINAS = "industria-conectada-maquinas";
+
+    const obterMaquinas = () => {
+        try {
+            return JSON.parse(localStorage.getItem(CHAVE_MAQUINAS)) || [];
+        } catch (erro) {
+            console.warn("Não foi possível ler as máquinas salvas.", erro);
+            return [];
+        }
+    };
+
+    const salvarMaquinas = (maquinas) => {
+        localStorage.setItem(CHAVE_MAQUINAS, JSON.stringify(maquinas));
+    };
+
+    const configurarCadastroDeMaquina = () => {
+        const formulario = document.querySelector("#formulario-maquina");
+
+        if (!formulario) return;
+
+        const mensagem = document.querySelector("#mensagem-formulario");
+
+        formulario.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+
+            if (!formulario.checkValidity()) {
+                formulario.reportValidity();
+                return;
+            }
+
+            const dados = new FormData(formulario);
+            const maquinas = obterMaquinas();
+            const novaMaquina = {
+                id: Date.now(),
+                nome: dados.get("nome").trim(),
+                setor: dados.get("setor").trim(),
+                tipo: dados.get("tipo").trim(),
+                status: dados.get("status"),
+                consumo: Number(dados.get("consumo")),
+                temperatura: Number(dados.get("temperatura"))
+            };
+
+            maquinas.push(novaMaquina);
+            salvarMaquinas(maquinas);
+            formulario.reset();
+            mensagem.textContent = "Máquina cadastrada com sucesso. Redirecionando para a lista...";
+
+            window.setTimeout(() => {
+                window.location.href = "./maquinas.html";
+            }, 900);
+        });
+    };
+
+    const configurarListaDeMaquinas = () => {
+        const tabela = document.querySelector("#lista-maquinas");
+
+        if (!tabela) return;
+
+        const maquinas = obterMaquinas();
+        const contador = document.querySelector("#quantidade-maquinas");
+
+        const classeDoStatus = (status) => {
+            if (status === "Em operação") return "status-operacao";
+            if (status === "Em manutenção") return "status-manutencao";
+            return "status-parada";
+        };
+
+        maquinas.forEach((maquina) => {
+            const linha = document.createElement("tr");
+            const valores = [
+                maquina.nome,
+                maquina.setor,
+                maquina.tipo
+            ];
+
+            valores.forEach((valor) => {
+                const celula = document.createElement("td");
+                celula.textContent = valor;
+                linha.appendChild(celula);
+            });
+
+            const celulaStatus = document.createElement("td");
+            const status = document.createElement("span");
+            status.className = `status ${classeDoStatus(maquina.status)}`;
+            status.textContent = maquina.status;
+            celulaStatus.appendChild(status);
+            linha.appendChild(celulaStatus);
+
+            const consumo = document.createElement("td");
+            consumo.textContent = `${maquina.consumo.toLocaleString("pt-BR")} kWh`;
+            linha.appendChild(consumo);
+
+            const temperatura = document.createElement("td");
+            temperatura.textContent = `${maquina.temperatura.toLocaleString("pt-BR")} °C`;
+            linha.appendChild(temperatura);
+
+            const acoes = document.createElement("td");
+            acoes.className = "acoes";
+
+            const botaoExcluir = document.createElement("button");
+            botaoExcluir.className = "botao-acao excluir";
+            botaoExcluir.type = "button";
+            botaoExcluir.textContent = "Excluir";
+            botaoExcluir.addEventListener("click", () => {
+                const confirmar = window.confirm(`Excluir a máquina ${maquina.nome}?`);
+                if (!confirmar) return;
+
+                salvarMaquinas(obterMaquinas().filter((item) => item.id !== maquina.id));
+                linha.remove();
+
+                if (contador) {
+                    const total = 3 + obterMaquinas().length;
+                    contador.textContent = `${total} ${total === 1 ? "máquina encontrada" : "máquinas encontradas"}`;
+                }
+            });
+
+            acoes.appendChild(botaoExcluir);
+            linha.appendChild(acoes);
+            tabela.appendChild(linha);
+        });
+
+        if (contador) {
+            const total = 3 + maquinas.length;
+            contador.textContent = `${total} ${total === 1 ? "máquina encontrada" : "máquinas encontradas"}`;
+        }
+    };
+
     const criarBotaoVoltarAoTopo = () => {
         const botao = document.createElement("button");
         const reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -31,6 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     criarBotaoVoltarAoTopo();
+    configurarCadastroDeMaquina();
+    configurarListaDeMaquinas();
 
     if (!window.gsap) {
         console.warn("GSAP não foi carregado. O site continuará sem animações.");
@@ -71,13 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 x: 85,
                 opacity: 0,
                 duration: 0.65
-            }, "-=0.5")
-            .from(".titulo-pagina > .botao, .titulo-pagina > button", {
-                x: 100,
-                opacity: 0,
-                rotation: 3,
-                duration: 0.65
-            }, "-=0.55");
+            }, "-=0.5");
     };
 
     const animarQuandoAparecer = () => {
@@ -174,7 +297,51 @@ document.addEventListener("DOMContentLoaded", () => {
         observador.observe(grafico);
     };
 
+    const animarRodapeUmaVez = () => {
+        const rodape = document.querySelector(".rodape");
+
+        if (!rodape) return;
+
+        const colunas = rodape.querySelectorAll(".rodape-coluna");
+        const marca = rodape.querySelector(".rodape-marca");
+
+        const observador = new IntersectionObserver((entradas, observer) => {
+            if (!entradas[0].isIntersecting) return;
+
+            const timeline = gsap.timeline({
+                defaults: { ease: "power3.out" }
+            });
+
+            timeline
+                .from(rodape, {
+                    opacity: 0,
+                    duration: 0.45
+                })
+                .from(colunas, {
+                    y: 55,
+                    opacity: 0,
+                    duration: 0.75,
+                    stagger: 0.14
+                }, "-=0.15")
+                .from(marca, {
+                    y: 100,
+                    opacity: 0,
+                    scale: 0.94,
+                    duration: 1.05,
+                    ease: "expo.out"
+                }, "-=0.45");
+
+            observer.unobserve(rodape);
+            observer.disconnect();
+        }, {
+            threshold: 0.18
+        });
+
+        observador.observe(rodape);
+    };
+
     animarEntradaDaPagina();
     animarQuandoAparecer();
     animarGraficoCircular();
+    animarRodapeUmaVez();
 });
