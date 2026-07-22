@@ -44,6 +44,19 @@ Desenvolver uma aplicação Full Stack para monitoramento e gestão de processos
 
 Usuário → HTML, CSS e JavaScript → API Node.js/Express → MySQL
 
+## Modelagem do banco de dados
+
+O banco de dados `industria_conectada` possui as entidades Máquinas, Produções, Sustentabilidade e Ocorrências. Uma máquina pode estar relacionada a vários registros de produção.
+
+![Dicionário de dados da Indústria Conectada](frontend/assets/dicionario.png)
+
+Documentação técnica:
+
+- [Diagrama Entidade-Relacionamento](documentacao/der.md)
+- [Dicionário de dados](documentacao/dicionario-dados.md)
+- [Script de criação do banco](database/schema.sql)
+- [Dados iniciais para testes](database/seed.sql)
+
 ## Como executar
 
 Nesta etapa, abra o arquivo `frontend/index.html` no navegador ou utilize a extensão Live Server do Visual Studio Code.
