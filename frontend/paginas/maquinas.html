@@ -73,7 +73,7 @@
                     Pesquisar máquinas
                 </h3>
 
-                <form class="filtros">
+                <form id="formulario-filtros" class="filtros">
                     <div class="campo campo-pesquisa">
                         <label for="pesquisa">Nome da máquina</label>
                         <input
@@ -96,7 +96,7 @@
                         </select>
                     </div>
 
-                    <button class="botao botao-secundario" type="button">
+                    <button class="botao botao-secundario" type="submit">
                         Pesquisar
                     </button>
                 </form>
@@ -106,7 +106,7 @@
                 <div class="painel-cabecalho">
                     <div>
                         <h3 id="titulo-lista-maquinas">Máquinas cadastradas</h3>
-                        <p id="quantidade-maquinas">3 máquinas encontradas</p>
+                        <p id="quantidade-maquinas">Carregando...</p>
                     </div>
                 </div>
 
@@ -126,68 +126,8 @@
 
                         <tbody id="lista-maquinas">
                             <tr>
-                                <td>Torno CNC 01</td>
-                                <td>Usinagem</td>
-                                <td>Torno</td>
-                                <td>
-                                    <span class="status status-operacao">
-                                        Em operação
-                                    </span>
-                                </td>
-                                <td>45 kWh</td>
-                                <td>42 °C</td>
-                                <td class="acoes">
-                                    <button class="botao-acao editar" type="button">
-                                        Editar
-                                    </button>
-
-                                    <button class="botao-acao excluir" type="button">
-                                        Excluir
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Prensa Hidráulica</td>
-                                <td>Estamparia</td>
-                                <td>Prensa</td>
-                                <td>
-                                    <span class="status status-manutencao">
-                                        Em manutenção
-                                    </span>
-                                </td>
-                                <td>70 kWh</td>
-                                <td>28 °C</td>
-                                <td class="acoes">
-                                    <button class="botao-acao editar" type="button">
-                                        Editar
-                                    </button>
-
-                                    <button class="botao-acao excluir" type="button">
-                                        Excluir
-                                    </button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Esteira 03</td>
-                                <td>Montagem</td>
-                                <td>Esteira</td>
-                                <td>
-                                    <span class="status status-parada">
-                                        Parada
-                                    </span>
-                                </td>
-                                <td>20 kWh</td>
-                                <td>24 °C</td>
-                                <td class="acoes">
-                                    <button class="botao-acao editar" type="button">
-                                        Editar
-                                    </button>
-
-                                    <button class="botao-acao excluir" type="button">
-                                        Excluir
-                                    </button>
+                                <td class="estado-tabela" colspan="7">
+                                    Carregando máquinas...
                                 </td>
                             </tr>
                         </tbody>
@@ -231,5 +171,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="../js/script.js"></script>
+    <script type="module" src="../js/maquinas.js"></script>
 </body>
 </html>

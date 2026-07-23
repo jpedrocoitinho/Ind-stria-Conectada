@@ -761,7 +761,7 @@ tbody tr:hover {
 
 .campo input:focus,
 .campo select:focus {
-    outline: 3px solid var(--acid);
+    outline: 3px solid rgb(226, 193, 132);
     outline-offset: 0;
 }
 
@@ -785,6 +785,23 @@ tbody tr:hover {
 
 .botao-acao.excluir {
     background: #ff9f91;
+}
+
+.estado-tabela {
+    padding: 34px 20px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.estado-tabela.estado-erro {
+    background: #fff0ee;
+    color: var(--red);
+    font-weight: 700;
+}
+
+.botao-acao:disabled {
+    cursor: wait;
+    opacity: 0.55;
 }
 
 .painel-destaque-verde {

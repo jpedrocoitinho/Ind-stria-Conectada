@@ -21,6 +21,18 @@
     grid-column: 1 / -1;
 }
 
+.ajuda-campo {
+    min-height: 2.5em;
+    margin: 6px 0 9px;
+    color: #667064;
+    font-size: 0.80rem;
+    line-height: 1.35;
+}
+
+.campo-largo .ajuda-campo {
+    min-height: auto;
+}
+
 .acoes-formulario {
     display: flex;
     justify-content: flex-end;
@@ -37,6 +49,23 @@
     font-size: 0.82rem;
     font-weight: 700;
     text-align: right;
+}
+
+.mensagem-formulario.carregando {
+    color: #64748b;
+}
+
+.mensagem-formulario.sucesso {
+    color: #168c70;
+}
+
+.mensagem-formulario.erro {
+    color: #cf3f3f;
+}
+
+#formulario-maquina button:disabled {
+    cursor: wait;
+    opacity: 0.65;
 }
 
 @media (max-width: 760px) {

@@ -87,6 +87,7 @@
                                 type="text"
                                 id="nome"
                                 name="nome"
+                                aria-describedby="ajuda-nome"
                                 placeholder="Ex.: Torno CNC 01"
                                 required
                             >
@@ -94,11 +95,15 @@
 
                         <div class="campo">
                             <label for="setor">Setor *</label>
+                            <p class="ajuda-campo" id="ajuda-setor">
+                                Indique o setor da fábrica onde a máquina está instalada.
+                            </p>
 
                             <input
                                 type="text"
                                 id="setor"
                                 name="setor"
+                                aria-describedby="ajuda-setor"
                                 placeholder="Ex.: Usinagem"
                                 required
                             >
@@ -106,11 +111,15 @@
 
                         <div class="campo">
                             <label for="tipo">Tipo *</label>
+                            <p class="ajuda-campo" id="ajuda-tipo">
+                                Informe a categoria ou função principal do equipamento.
+                            </p>
 
                             <input
                                 type="text"
                                 id="tipo"
                                 name="tipo"
+                                aria-describedby="ajuda-tipo"
                                 placeholder="Ex.: Torno"
                                 required
                             >
@@ -118,8 +127,16 @@
 
                         <div class="campo">
                             <label for="status">Status *</label>
+                            <p class="ajuda-campo" id="ajuda-status">
+                                Selecione a situação atual da máquina.
+                            </p>
 
-                            <select id="status" name="status" required>
+                            <select
+                                id="status"
+                                name="status"
+                                aria-describedby="ajuda-status"
+                                required
+                            >
                                 <option value="">Selecione</option>
                                 <option>Em operação</option>
                                 <option>Em manutenção</option>
@@ -132,11 +149,15 @@
                             <label for="consumo">
                                 Consumo médio de energia (kWh) *
                             </label>
+                            <p class="ajuda-campo" id="ajuda-consumo">
+                                Digite o consumo médio de energia registrado em kWh.
+                            </p>
 
                             <input
                                 type="number"
                                 id="consumo"
                                 name="consumo"
+                                aria-describedby="ajuda-consumo"
                                 min="0"
                                 step="0.01"
                                 placeholder="Ex.: 45.50"
@@ -148,11 +169,15 @@
                             <label for="temperatura">
                                 Temperatura atual (°C) *
                             </label>
+                            <p class="ajuda-campo" id="ajuda-temperatura">
+                                Informe a última temperatura medida em graus Celsius.
+                            </p>
 
                             <input
                                 type="number"
                                 id="temperatura"
                                 name="temperatura"
+                                aria-describedby="ajuda-temperatura"
                                 step="0.1"
                                 placeholder="Ex.: 42"
                                 required
@@ -210,5 +235,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="../js/script.js"></script>
+    <script type="module" src="../js/cadastro-maquina.js"></script>
 </body>
 </html>
